@@ -55,8 +55,11 @@ public class CsvRandomizer {
         }
 
         System.out.println("▶ Randomizing " + (allRows.size() - 1) + " rows...");
-
-        try (CSVWriter writer = new CSVWriter(new FileWriter(output.toFile()))) {
+        
+try (ICSVWriter writer = new CSVWriterBuilder(new FileWriter(output.toFile()))
+        .withSeparator(',')
+        .withQuoteChar('"')
+        .build()) {
             writer.writeNext(header);
 
             for (int i = 1; i < allRows.size(); i++) {
