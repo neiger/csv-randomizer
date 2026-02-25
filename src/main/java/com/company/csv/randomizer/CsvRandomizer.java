@@ -57,24 +57,29 @@ public class CsvRandomizer {
         System.out.println("▶ Randomizing " + (allRows.size() - 1) + " rows...");
         
 try (ICSVWriter writer = new CSVWriterBuilder(new FileWriter(output.toFile()))
-        .withSeparator(',')
-        .withQuoteChar('"')
-        .build()) {
-            writer.writeNext(header);
+        // .withSeparator(',')
+        // .withQuoteChar('"')
+        // .build()) {
+         .withSeparator(',')
+         .withQuoteChar(CSVWriter.DEFAULT_QUOTE_CHARACTER)
+         .withEscapeChar(CSVWriter.DEFAULT_ESCAPE_CHARACTER)
+         .withLineEnd(CSVWriter.DEFAULT_LINE_END)
+        // .withApplyQuotesToAll(false)
+         .build()) {
+            writer.writeNext(header, false);
 
             for (int i = 1; i < allRows.size(); i++) {
                 String[] row = allRows.get(i);
                 for (Integer idx : targetIndexes.keySet()) {
                     row[idx] = randomizePreserveFormat(row[idx]);
                 }
-                writer.writeNext(row);
+                writer.writeNext(row, false);
 
                 if (i % 1000 == 0) { // log every 1000 rows for large files
                     System.out.println("   ▸ Processed " + i + " rows...");
                 }
             }
         }
-
         long end = System.currentTimeMillis();
         System.out.println("✅ CSV randomized successfully: " + output);
         System.out.println("⏱ Total rows processed: " + (allRows.size() - 1));
