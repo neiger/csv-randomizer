@@ -70,6 +70,23 @@
                         </transformers>
                     </configuration>
                 </execution>
+
+                <!-- Shade: Validator JAR -->
+                <execution>
+                    <id>validation</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <finalName>csv-validation</finalName>
+                        <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <mainClass>com.company.csv.validation.AsmValidationGenerator</mainClass>
+                            </transformer>
+                        </transformers>
+                    </configuration>
+                </execution>
             </executions>
         </plugin>
 
