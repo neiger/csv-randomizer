@@ -1,0 +1,217 @@
+######### Performance
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV10records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV10records100326.csv
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV20records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV20records100326.csv
+  
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV30records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV30records100326.csv  
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records100326.csv
+  
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV15records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV15records030926.csv
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV3records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV3records120326.csv
+
+csvrand "$CSV_OLD/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV10records0302.csv" "$CSV_NEW/Performance10-20-30-40" "V10"
+
+######### Performance Peak
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV50records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV50records100326.csv
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV80records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV80records100326.csv  
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV160records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV160records100326.csv  
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV320records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV320records100326.csv  
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV1280records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV1280records110326.csv  
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV2560records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV2560records110326.csv  
+
+######### General Purposes
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/TestingFiles/ChangeOrder_NewData020926.csv \
+  /Users/neiger.serrano/Desktop/csv/new/TestingFiles/ChangeOrder_CO_NewData110326.csv
+
+
+
+######### FIFO UTC Timestamp in file name
+just add at the end of file name and before the dot csv
+$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/TestingFiles/ChangeOrder_NewData020926.csv \
+  /Users/neiger.serrano/Desktop/csv/new/TestingFiles/ChangeOrder_CO_NewData_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV5records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV2560_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV3records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV3_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+    
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV15records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV15_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv    
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV20records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV20_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV30records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV30_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv    
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV40_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+
+sleep 20
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV40_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+
+sleep 20
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV40_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+
+sleep 20
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV40_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+
+sleep 20
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV40_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+
+####### 100 count records custom
+
+java -jar target/csv-generator.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records0302.csv  \
+  /Users/neiger.serrano/Desktop/csv/new/NewGenerator/ChangeOrder_CO-1124100_8bV40records0302_5000.csv \
+  5000
+
+java -jar target/csv-generator.jar \
+  /Users/neiger.serrano/Desktop/csv/old/8b/ChangeOrder_CO-1124100_8b_original.csv \
+  /Users/neiger.serrano/Desktop/csv/new/8b/ChangeOrder_CO-1124100_8b_original_ST1_09032026.csv \
+  160
+
+
+
+####### QA values validation in ASM
+
+java -jar target/csv-validation.jar \
+/Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV10records100326.csv \
+> /Users/neiger.serrano/Desktop/csv/qa/testResult10_100326.txt
+ 
+java -jar target/csv-validation.jar \
+/Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV20records100326.csv \
+> /Users/neiger.serrano/Desktop/csv/qa/testResult20_100326.txt
+
+java -jar target/csv-validation.jar \
+/Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV30records100326.csv \
+> /Users/neiger.serrano/Desktop/csv/qa/testResult30_100326.txt
+
+java -jar target/csv-validation.jar \
+/Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV40records100326.csv \
+> /Users/neiger.serrano/Desktop/csv/qa/testResult40_100326.txt
+
+FIFO
+
+java -jar target/csv-validation.jar \
+/Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV2560_20260327T170820235Z.csv \
+> /Users/neiger.serrano/Desktop/csv/qa/FIFO/ChangeOrder_CO-1124100_8bV2560_20260327T170820235Z.txt
+ 
+java -jar target/csv-validation.jar \
+/Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV2560_20260327T172524940Z.csv \
+> /Users/neiger.serrano/Desktop/csv/qa/FIFO/ChangeOrder_CO-1124100_8bV2560_20260327T172524940Z.txt
+
+java -jar target/csv-validation.jar \
+/Users/neiger.serrano/Desktop/csv/new/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV2560_20260327T181311502Z.csv \
+> /Users/neiger.serrano/Desktop/csv/qa/FIFO/ChangeOrder_CO-1124100_8bV2560_20260327T181311502Z.txt
+
+####### 8b Change order file 
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/8b/ChangeOrder_CO-1124100_8b_original.csv \
+  /Users/neiger.serrano/Desktop/csv/new/8b/ChangeOrder_CO-1124100_8b_original_10032026.csv
+  
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/8b/ChangeOrder_CO-1124100_8b_corrected.csv \
+  /Users/neiger.serrano/Desktop/csv/new/8b/ChangeOrder_CO-1124100_8b_corrected_10032026.csv  
+  
+####### ASM Validations
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV1records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/ASMValidation/22-04-2026/ChangeOrder_CO-1124100_8bV1_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+  
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV3records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/ASMValidation/22-04-2026/ChangeOrder_CO-1124100_8bV3_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv  
+  
+#######   
+  
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV5records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV5_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv 
+  
+sleep 120
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV5records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV5_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv 
+  
+sleep 120
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV5records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV5_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv 
+  
+sleep 120
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV5records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV5_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv 
+  
+sleep 120
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV5records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV5_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv 
+  
+sleep 120
+
+java -jar target/csv-randomizer.jar \
+  /Users/neiger.serrano/Desktop/csv/old/Performance10-20-30-40/ChangeOrder_CO-1124100_8bV5records0302.csv \
+  /Users/neiger.serrano/Desktop/csv/new/Fifo/22-04-2026/ChangeOrder_CO-1124100_8bV5_$(date -u +"%Y%m%dT%H%M%S")$(printf "%03d" $(($(date +%N)/1000000)))Z.csv 
